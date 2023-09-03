@@ -1,8 +1,7 @@
 {
   "author": "Multiple authors",
-  "name": "@cuaklabs/prettier-config",
-  "description": "Common prettier config package",
-  "exports": "./index.js",
+  "name": "@cuaklabs/typescript-config",
+  "description": "Common typescript config package",
   "license": "See license in \"LICENSE\" file",
   "bugs": {
     "url": "https://github.com/cuaklabs/ajstt/issues"
@@ -12,5 +11,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cuaklabs/ajstt.git"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  },
+  "scripts": {
+    "format": "prettier --write ."
   }
 }

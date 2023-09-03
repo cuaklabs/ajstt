@@ -1,5 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
+    "format": {
+      "inputs": ["src/**/*.ts"],
+      "outputs": ["src/**/*.ts"]
+    },
+    "@cuaklabs/typescript-config#format": {
+      "inputs": ["./**/*", "!node_modules"],
+      "outputs": ["./**/*", "!node_modules"]
+    }
   }
 }
