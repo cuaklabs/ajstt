@@ -30,6 +30,7 @@
     "@commitlint/prompt-cli": "17.7.1",
     "@cuaklabs/prettier-config": "workspace:*",
     "@cuaklabs/typescript-config": "workspace:*",
+    "lint-staged": "^14.0.1",
     "turbo": "^1.10.13"
   }
 }
