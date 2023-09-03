@@ -1,0 +1,25 @@
+{
+  "name": "root",
+  "description": "Another Json Schema to Typescript Transpiler",
+  "main": "index.js",
+  "scripts": {
+  },
+  "homepage": "https://github.com/cuaklabs/ajstt#readme",
+  "bugs": {
+    "url": "https://github.com/cuaklabs/ajstt/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuaklabs/ajstt.git"
+  },
+  "keywords": [
+    "json",
+    "json-schema",
+    "jsonschema",
+    "schema",
+    "transpiler",
+    "typescript"
+  ],
+  "author": "Roberto Pintos López",
+  "license": "See license in \"LICENSE\" file"
+}
