@@ -2,7 +2,6 @@
   "author": "Multiple authors",
   "name": "@cuaklabs/prettier-config",
   "description": "Common prettier config package",
-  "type": "module",
   "exports": "./index.js",
   "license": "See license in \"LICENSE\" file",
   "bugs": {
