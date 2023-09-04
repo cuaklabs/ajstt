@@ -5,6 +5,10 @@
       "inputs": ["src/**/*.ts"],
       "outputs": ["src/**/*.ts"]
     },
+    "@cuaklabs/eslint-config#format": {
+      "inputs": ["./**/*", "!node_modules", "!.turbo"],
+      "outputs": ["./**/*", "!node_modules", "!.turbo"]
+    },
     "@cuaklabs/jest-config#format": {
       "inputs": ["lib/**/*"],
       "outputs": ["lib/**/*"]
@@ -12,6 +16,10 @@
     "@cuaklabs/typescript-config#format": {
       "inputs": ["./**/*", "!node_modules", "!.turbo"],
       "outputs": ["./**/*", "!node_modules", "!.turbo"]
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**/*.ts"]
     }
   }
 }
