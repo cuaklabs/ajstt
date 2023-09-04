@@ -10,8 +10,8 @@
       "outputs": ["lib/**/*"]
     },
     "@cuaklabs/typescript-config#format": {
-      "inputs": ["./**/*", "!node_modules"],
-      "outputs": ["./**/*", "!node_modules"]
+      "inputs": ["./**/*", "!node_modules", "!.turbo"],
+      "outputs": ["./**/*", "!node_modules", "!.turbo"]
     }
   }
 }
