@@ -1,0 +1,22 @@
+{
+  "author": "Roberto Pintos López (https://github.com/notaphplover)",
+  "description": "Backend ESLint config for backend packages",
+  "devDependencies": {
+    "eslint": "8.48.0"
+  },
+  "bugs": {
+    "url": "https://github.com/cuaklabs/ajstt/issues"
+  },
+  "homepage": "https://github.com/cuaklabs/ajstt#readme",
+  "license": "See license in \"LICENSE\" file",
+  "main": "index.js",
+  "name": "@cuaklabs/eslint-config",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuaklabs/ajstt.git"
+  },
+  "scripts": {
+    "format": "prettier --write ."
+  }
+}
