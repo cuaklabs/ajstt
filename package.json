@@ -3,6 +3,7 @@
   "description": "Another Json Schema to Typescript Transpiler",
   "main": "index.js",
   "scripts": {
+    "build": "turbo run build",
     "commit": "commit",
     "format": "turbo run format",
     "lint": "turbo run lint",
