@@ -1,17 +1,23 @@
 {
   "author": "Roberto Pintos López (https://github.com/notaphplover)",
-  "name": "@cuaklabs/prettier-config",
-  "description": "Common prettier config package",
-  "type": "module",
-  "exports": "./index.js",
-  "license": "See license in \"LICENSE\" file",
+  "description": "Jest config for backend packages",
+  "devDependencies": {
+    "@jest/types": "29.6.3"
+  },
+  "exports": "./lib/index.js",
   "bugs": {
     "url": "https://github.com/cuaklabs/ajstt/issues"
   },
   "homepage": "https://github.com/cuaklabs/ajstt#readme",
+  "license": "See license in \"LICENSE\" file",
+  "name": "@cuaklabs/jest-config",
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cuaklabs/ajstt.git"
-  }
+  },
+  "scripts": {
+    "format": "prettier --write ./lib/**/*.js"
+  },
+  "type": "module"
 }
