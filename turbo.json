@@ -5,6 +5,10 @@
       "inputs": ["src/**/*.ts"],
       "outputs": ["src/**/*.ts"]
     },
+    "@cuaklabs/jest-config#format": {
+      "inputs": ["lib/**/*"],
+      "outputs": ["lib/**/*"]
+    },
     "@cuaklabs/typescript-config#format": {
       "inputs": ["./**/*", "!node_modules"],
       "outputs": ["./**/*", "!node_modules"]
