@@ -23,15 +23,34 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Added `JsonValue`.
-- Added `JsonRootSchema`.
-- Added `JsonRootSchemaObject`.
-- Added `JsonSchema`.
-- Added `JsonSchemaBaseContentEncoding`.
-- Added `JsonSchemaFormat`.
-- Added `JsonSchemaMimeContentTransferEncoding`.
-- Added `JsonSchemaObject`.
-- Added `JsonSchemaType`.
+- Added `JsonValue` type.
+- Added `JsonRootSchema` type.
+- Added `JsonSchemaBoolean` type.
+- Added `JsonRootSchemaCoreVocabularyProperties` type.
+- Added `JsonRootSchemaKnownPropertiesObject` type.
+- Added `JsonRootSchemaObject` type.
+- Added `JsonSchema` type.
+- Added `JsonSchemaBaseContentEncoding` type.
+- Added `JsonSchemaCoreVocabularyProperties` type.
+- Added `JsonSchemaCustomFormat` type.
+- Added `JsonSchemaFormat` type.
+- Added `JsonSchemaFormatProperties` type.
+- Added `JsonSchemaKnownPropertiesObject` type.
+- Added `JsonSchemaMetadataAnnotationsProperties` type.
+- Added `JsonSchemaMimeContentTransferEncoding` type.
+- Added `JsonSchemaObject` type.
+- Added `JsonSchemaStringContentEncodedProperties` type.
+- Added `JsonSchemaStructuralValidationProperties` type.
+- Added `JsonSchemaSubschemeAppliedProperties` type.
+- Added `JsonSchemaType` type.
+- Added `JsonSchemaUnevaluatedLocationProperties` type.
+- Added `JsonSchemaUnknownProperties` type.
+- Added `WellKnownVocabulary` type.
+- Added `jsonSchemaBaseContentEncodings`.
+- Added `jsonSchemaFormats`.
+- Added `jsonSchemaMimeContentTransferEncodings`.
+- Added `jsonSchemaTypes`.
+- Added `wellKnownVocabularies`.
 
 
 

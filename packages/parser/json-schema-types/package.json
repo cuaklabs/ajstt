@@ -23,7 +23,7 @@
   "license": "See license in \"LICENSE\" file",
   "exports": {
     ".": "./lib/index.js",
-    "./2020-12": "./lib/jsonSchema/2020/index.js"
+    "./2020-12": "./lib/jsonSchema/202012/index.js"
   },
   "name": "@cuaklabs/json-schema-types",
   "publishConfig": {
