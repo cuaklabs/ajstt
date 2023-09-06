@@ -1,3 +1,5 @@
+[![Build status](https://github.com/cuaklabs/ajstt/workflows/build/badge.svg)](https://github.com/cuaklabs/ajstt/workflows/build/badge.svg)
+
 ⚠️ **This is currently a work in progress** ⚠️
 
 Another Json Schema to Typescript Transpiler
