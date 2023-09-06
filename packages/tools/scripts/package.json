@@ -1,0 +1,19 @@
+{
+  "name": "@cuaklabs/scripts",
+  "private": true,
+  "description": "common scripts",
+  "author": "Roberto Pintos López (https://github.com/notaphplover)",
+  "license": "See license in \"LICENSE\" file",
+  "type": "module",
+  "homepage": "https://github.com/cuaklabs/ajstt#readme",
+  "bugs": {
+    "url": "https://github.com/cuaklabs/ajstt/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuaklabs/ajstt.git"
+  },
+  "bin": {
+    "script-get-affected-projects": "./bin/getAffectedProjects.js"
+  }
+}

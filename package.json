@@ -39,6 +39,7 @@
     "@cuaklabs/eslint-config": "workspace:*",
     "@cuaklabs/jest-config": "workspace:*",
     "@cuaklabs/prettier-config": "workspace:*",
+    "@cuaklabs/scripts": "workspace:*",
     "@cuaklabs/typescript-config": "workspace:*",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
