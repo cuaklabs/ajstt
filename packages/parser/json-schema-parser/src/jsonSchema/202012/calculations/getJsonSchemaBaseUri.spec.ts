@@ -5,7 +5,7 @@ jest.mock('@cuaklabs/uri');
 import { JsonSchemaObject } from '@cuaklabs/json-schema-types/2020-12';
 import { getBaseUri, GetBaseUriOptions } from '@cuaklabs/uri';
 
-import { JsonRootSchema202012Fixtures } from '../fixtures/JsonRootSchema202012Fixtures';
+import { JsonRootSchemaFixtures } from '../fixtures/JsonRootSchemaFixtures';
 import { getJsonSchemaBaseUri } from './getJsonSchemaBaseUri';
 
 describe(getJsonSchemaBaseUri.name, () => {
@@ -13,7 +13,7 @@ describe(getJsonSchemaBaseUri.name, () => {
     let jsonSchemaFixture: JsonSchemaObject;
 
     beforeAll(() => {
-      jsonSchemaFixture = JsonRootSchema202012Fixtures.withId;
+      jsonSchemaFixture = JsonRootSchemaFixtures.withId;
     });
 
     describe('when called', () => {
@@ -54,7 +54,7 @@ describe(getJsonSchemaBaseUri.name, () => {
     let jsonSchemaFixture: JsonSchemaObject;
 
     beforeAll(() => {
-      jsonSchemaFixture = JsonRootSchema202012Fixtures.withNoId;
+      jsonSchemaFixture = JsonRootSchemaFixtures.withNoId;
     });
 
     describe('when called', () => {
