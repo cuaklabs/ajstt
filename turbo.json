@@ -30,6 +30,30 @@
     "lint": {
       "dependsOn": ["^build"],
       "inputs": ["src/**/*.ts"]
+    },
+    "test:integration": {
+      "dependsOn": ["build"],
+      "inputs": ["dist/**", "lib/**"],
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "inputs": ["dist/**", "lib/**"],
+      "outputs": []
+    },
+    "test:coverage": {
+      "dependsOn": ["build"],
+      "inputs": ["dist/**", "lib/**"],
+      "outputs": ["coverage/**"]
+    },
+    "test:uncommitted": {
+      "inputs": ["src/**/*.ts"],
+      "outputs": []
+    },
+    "test:unit": {
+      "dependsOn": ["build"],
+      "inputs": ["dist/**", "lib/**"],
+      "outputs": []
     }
   }
 }
