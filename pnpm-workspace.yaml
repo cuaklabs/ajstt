@@ -1,3 +1,4 @@
 packages:
   - "packages/parser/*"
   - "packages/tools/*"
+  - "packages/transformers/*"
