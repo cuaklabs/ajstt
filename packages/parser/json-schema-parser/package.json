@@ -29,6 +29,9 @@
   },
   "homepage": "https://github.com/cuaklabs/ajstt#readme",
   "license": "See license in \"LICENSE\" file",
+  "exports": {
+    "./2020-12": "./lib/jsonSchema/202012/index.js"
+  },
   "name": "@cuaklabs/json-schema-parser",
   "publishConfig": {
     "access": "public"
