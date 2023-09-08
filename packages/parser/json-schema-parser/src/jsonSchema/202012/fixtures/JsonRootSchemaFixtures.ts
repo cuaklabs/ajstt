@@ -17,6 +17,13 @@ export class JsonRootSchemaFixtures {
     };
   }
 
+  public static get withRef(): JsonRootSchemaObject {
+    return {
+      ...JsonRootSchemaFixtures.any,
+      $ref: 'https://schema.id',
+    };
+  }
+
   public static get withNoId(): JsonRootSchemaObject {
     const fixture: JsonRootSchemaObject = JsonRootSchemaFixtures.any;
 
