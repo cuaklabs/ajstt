@@ -5,11 +5,10 @@ export enum TypeMetadataKind {
   anyType,
   arrayType,
   booleanType,
+  floatType,
   integerType,
   literalType,
   noneType,
-  nullType,
-  numberType,
   or,
   propertyType,
   stringType,
@@ -39,6 +38,7 @@ export type ArrayTypeMetadata =
   OneChildTypeMetadata<TypeMetadataKind.arrayType>;
 export type BooleanTypeMetadata =
   BaseTypeMetadata<TypeMetadataKind.booleanType>;
+export type FloatTypeMetadata = BaseTypeMetadata<TypeMetadataKind.floatType>;
 export type IntegerTypeMetadata =
   BaseTypeMetadata<TypeMetadataKind.integerType>;
 export interface LiteralTypeMetadata
@@ -46,8 +46,6 @@ export interface LiteralTypeMetadata
   literal: JsonValue;
 }
 export type NoneTypeMetadata = BaseTypeMetadata<TypeMetadataKind.noneType>;
-export type NullTypeMetadata = BaseTypeMetadata<TypeMetadataKind.nullType>;
-export type NumberTypeMetadata = BaseTypeMetadata<TypeMetadataKind.numberType>;
 export type OrTypeMetadata = ManyChildrenTypeMetadata<TypeMetadataKind.or>;
 export interface PropertyTypeMetadata
   extends OneChildTypeMetadata<TypeMetadataKind.propertyType> {
@@ -61,11 +59,10 @@ export type TypeMedatata =
   | AnyTypeMetadata
   | ArrayTypeMetadata
   | BooleanTypeMetadata
+  | FloatTypeMetadata
   | IntegerTypeMetadata
   | LiteralTypeMetadata
   | NoneTypeMetadata
-  | NullTypeMetadata
-  | NumberTypeMetadata
   | OrTypeMetadata
   | PropertyTypeMetadata
   | StringTypeMetadata
