@@ -1,4 +1,7 @@
-import { JsonSchema } from '@cuaklabs/json-schema-types/2020-12';
+import {
+  JsonRootSchema,
+  JsonSchema,
+} from '@cuaklabs/json-schema-types/2020-12';
 
 import { DereferenceFunction } from '../models/DereferenceFunction';
 import { JsonSchemaParseResult } from '../models/JsonSchemaParseResult';
@@ -8,7 +11,7 @@ import { dereferenceJsonSchema } from './dereferenceJsonSchema';
 
 export async function parse(
   deref: DereferenceFunction,
-  schemas: JsonSchema[],
+  schemas: (JsonRootSchema | JsonSchema)[],
   options: UriOptions,
 ): Promise<JsonSchemaParseResult>;
 export async function parse(
@@ -17,13 +20,13 @@ export async function parse(
 ): Promise<JsonSchemaParseResult>;
 export async function parse(
   ...args:
-    | [DereferenceFunction, JsonSchema[], UriOptions]
+    | [DereferenceFunction, (JsonRootSchema | JsonSchema)[], UriOptions]
     | [DereferenceFunction, ParseJsonSchemaOptions[]]
 ): Promise<JsonSchemaParseResult> {
   const [deref, schemasOrOptions, optionsOrUndefined]:
-    | [DereferenceFunction, JsonSchema[], UriOptions]
+    | [DereferenceFunction, (JsonRootSchema | JsonSchema)[], UriOptions]
     | [DereferenceFunction, ParseJsonSchemaOptions[], undefined] = args as
-    | [DereferenceFunction, JsonSchema[], UriOptions]
+    | [DereferenceFunction, (JsonRootSchema | JsonSchema)[], UriOptions]
     | [DereferenceFunction, ParseJsonSchemaOptions[], undefined];
 
   if (optionsOrUndefined === undefined) {
@@ -35,14 +38,14 @@ export async function parse(
 
 async function parseFromSingleOptions(
   deref: DereferenceFunction,
-  schemas: JsonSchema[],
+  schemas: (JsonRootSchema | JsonSchema)[],
   options: UriOptions,
 ): Promise<JsonSchemaParseResult> {
-  const referenceMap: Map<string, JsonSchema> = new Map();
+  const referenceMap: Map<string, JsonRootSchema | JsonSchema> = new Map();
 
   await Promise.all(
     schemas.map(
-      async (schema: JsonSchema): Promise<void> =>
+      async (schema: JsonRootSchema | JsonSchema): Promise<void> =>
         dereferenceJsonSchema(deref, schema, referenceMap, options),
     ),
   );
@@ -57,7 +60,7 @@ async function parseFromMultipleOptions(
   deref: DereferenceFunction,
   options: ParseJsonSchemaOptions[],
 ): Promise<JsonSchemaParseResult> {
-  const referenceMap: Map<string, JsonSchema> = new Map();
+  const referenceMap: Map<string, JsonRootSchema | JsonSchema> = new Map();
 
   await Promise.all(
     options.map(

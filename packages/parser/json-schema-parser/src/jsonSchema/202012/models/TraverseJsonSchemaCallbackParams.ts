@@ -6,6 +6,6 @@ import {
 export interface TraverseJsonSchemaCallbackParams {
   jsonPointer: string;
   parentJsonPointer: string | undefined;
-  parentSchema: JsonSchema | undefined;
-  schema: JsonSchema | JsonRootSchema;
+  parentSchema: JsonRootSchema | JsonSchema | undefined;
+  schema: JsonRootSchema | JsonSchema;
 }

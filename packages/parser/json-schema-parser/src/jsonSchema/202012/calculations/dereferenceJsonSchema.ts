@@ -1,4 +1,7 @@
-import { JsonSchema } from '@cuaklabs/json-schema-types/2020-12';
+import {
+  JsonRootSchema,
+  JsonSchema,
+} from '@cuaklabs/json-schema-types/2020-12';
 import { Uri } from '@cuaklabs/uri';
 
 import { traverseJsonSchema } from '../actions/traverseJsonSchema';
@@ -10,8 +13,8 @@ import { getJsonSchemaBaseUri } from './getJsonSchemaBaseUri';
 
 export async function dereferenceJsonSchema(
   deref: DereferenceFunction,
-  schema: JsonSchema,
-  referenceMap: Map<string, JsonSchema>,
+  schema: JsonRootSchema | JsonSchema,
+  referenceMap: Map<string, JsonRootSchema | JsonSchema>,
   uriOptions: UriOptions | undefined,
 ): Promise<void> {
   const baseUri: string = getJsonSchemaBaseUri(schema, uriOptions);
@@ -42,7 +45,10 @@ export async function dereferenceJsonSchema(
   );
 }
 
-function getSchemaUris(schema: JsonSchema, baseUri: string): string[] {
+function getSchemaUris(
+  schema: JsonRootSchema | JsonSchema,
+  baseUri: string,
+): string[] {
   const schemaUris: string[] = [];
 
   traverseJsonSchema(
