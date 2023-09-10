@@ -6,9 +6,11 @@ export enum TypeMetadataKind {
   arrayType,
   booleanType,
   floatType,
+  indexSignatureType,
   integerType,
   literalType,
   noneType,
+  objectType,
   or,
   propertyType,
   stringType,
@@ -29,7 +31,7 @@ export interface ManyChildrenTypeMetadata<
   TKind extends TypeMetadataKind,
   TChildren extends TypeMedatata[] = TypeMedatata[],
 > extends BaseTypeMetadata<TKind> {
-  children: TChildren[];
+  children: TChildren;
 }
 
 export type AndTypeMetadata = ManyChildrenTypeMetadata<TypeMetadataKind.and>;
@@ -39,6 +41,8 @@ export type ArrayTypeMetadata =
 export type BooleanTypeMetadata =
   BaseTypeMetadata<TypeMetadataKind.booleanType>;
 export type FloatTypeMetadata = BaseTypeMetadata<TypeMetadataKind.floatType>;
+export type IndexSignatureType =
+  OneChildTypeMetadata<TypeMetadataKind.indexSignatureType>;
 export type IntegerTypeMetadata =
   BaseTypeMetadata<TypeMetadataKind.integerType>;
 export interface LiteralTypeMetadata
@@ -46,9 +50,11 @@ export interface LiteralTypeMetadata
   literal: JsonValue;
 }
 export type NoneTypeMetadata = BaseTypeMetadata<TypeMetadataKind.noneType>;
+export type ObjectTypeMetadata = BaseTypeMetadata<TypeMetadataKind.objectType>;
 export type OrTypeMetadata = ManyChildrenTypeMetadata<TypeMetadataKind.or>;
 export interface PropertyTypeMetadata
   extends OneChildTypeMetadata<TypeMetadataKind.propertyType> {
+  isOptional: boolean;
   property: string;
 }
 export type StringTypeMetadata = BaseTypeMetadata<TypeMetadataKind.stringType>;
@@ -60,9 +66,11 @@ export type TypeMedatata =
   | ArrayTypeMetadata
   | BooleanTypeMetadata
   | FloatTypeMetadata
+  | IndexSignatureType
   | IntegerTypeMetadata
   | LiteralTypeMetadata
   | NoneTypeMetadata
+  | ObjectTypeMetadata
   | OrTypeMetadata
   | PropertyTypeMetadata
   | StringTypeMetadata
