@@ -36,7 +36,7 @@ export type WellKnownVocabulary =
 
 // https://json-schema.org/draft/2020-12/json-schema-core.html#name-the-json-schema-core-vocabu
 export interface JsonRootSchemaCoreVocabularyProperties {
-  $schema: string;
+  $schema?: string;
   // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   $vocabulary?: Record<WellKnownVocabulary | string, boolean>;
 }
