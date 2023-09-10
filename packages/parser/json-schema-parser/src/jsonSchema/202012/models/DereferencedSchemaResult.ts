@@ -1,8 +1,11 @@
-import { JsonSchema } from '@cuaklabs/json-schema-types/2020-12';
+import {
+  JsonRootSchema,
+  JsonSchema,
+} from '@cuaklabs/json-schema-types/2020-12';
 
-import { UriOptions } from '..';
+import { UriOptions } from '../models/UriOptions';
 
 export interface DereferencedSchemaResult {
-  schema: JsonSchema;
+  schema: JsonRootSchema | JsonSchema;
   uriOptions: UriOptions;
 }
