@@ -2,6 +2,7 @@ import { JsonSchema } from '@cuaklabs/json-schema-types/2020-12';
 import { Uri } from '@cuaklabs/uri';
 
 import { traverseJsonSchema } from '../actions/traverseJsonSchema';
+import { DereferencedSchemaResult } from '../models/DereferencedSchemaResult';
 import { DereferenceFunction } from '../models/DereferenceFunction';
 import { TraverseJsonSchemaCallbackParams } from '../models/TraverseJsonSchemaCallbackParams';
 import { UriOptions } from '../models/UriOptions';
@@ -23,19 +24,19 @@ export async function dereferenceJsonSchema(
 
   await Promise.all(
     missingSchemaUris.map(async (schemaUri: string): Promise<void> => {
-      const dereferencedSchema: JsonSchema = await deref(
+      const dereferencedSchemaResult: DereferencedSchemaResult = await deref(
         schema,
         baseUri,
         schemaUri,
       );
 
-      referenceMap.set(schemaUri, dereferencedSchema);
+      referenceMap.set(schemaUri, dereferencedSchemaResult.schema);
 
       await dereferenceJsonSchema(
         deref,
-        dereferencedSchema,
+        dereferencedSchemaResult.schema,
         referenceMap,
-        uriOptions,
+        dereferencedSchemaResult.uriOptions,
       );
     }),
   );
