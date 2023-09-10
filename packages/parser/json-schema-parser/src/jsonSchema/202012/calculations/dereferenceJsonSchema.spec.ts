@@ -85,6 +85,7 @@ describe(dereferenceJsonSchema.name, () => {
 
   describe('when called, and traverseJsonSchema() calls callback twice with an schema with a reference', () => {
     let dereferencedSchemaFixture: JsonSchema;
+    let dereferencedUriOptionsFixture: UriOptions;
     let subSchemaFixture: JsonSchemaObject;
     let baseUriFixture: string;
     let referenceMapFixture: Map<string, JsonSchema>;
@@ -93,6 +94,9 @@ describe(dereferenceJsonSchema.name, () => {
 
     beforeAll(async () => {
       dereferencedSchemaFixture = JsonRootSchemaFixtures.any;
+      dereferencedUriOptionsFixture = {
+        retrievalUri: 'dereferenced://uri/options',
+      };
       subSchemaFixture = JsonRootSchemaFixtures.withRef;
       baseUriFixture = 'base://fixture';
       referenceMapFixture = new Map();
@@ -123,7 +127,10 @@ describe(dereferenceJsonSchema.name, () => {
         )
         .mockImplementationOnce(() => undefined);
 
-      derefMock.mockResolvedValueOnce(dereferencedSchemaFixture);
+      derefMock.mockResolvedValueOnce({
+        schema: dereferencedSchemaFixture,
+        uriOptions: dereferencedUriOptionsFixture,
+      });
 
       result = await dereferenceJsonSchema(
         derefMock,
@@ -147,7 +154,7 @@ describe(dereferenceJsonSchema.name, () => {
       expect(getJsonSchemaBaseUri).toHaveBeenNthCalledWith(
         2,
         dereferencedSchemaFixture,
-        uriOptionsFixture,
+        dereferencedUriOptionsFixture,
       );
     });
 
