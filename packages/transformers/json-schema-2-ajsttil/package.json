@@ -1,0 +1,43 @@
+{
+  "author": "Roberto Pintos López (https://github.com/notaphplover)",
+  "description": "JSON schema to ajsttil transformer",
+  "devDependencies": {
+    "@cuaklabs/ajsttil": "workspace:*",
+    "@cuaklabs/json-schema-parser": "workspace:*",
+    "@cuaklabs/json-schema-types": "workspace:*",
+    "@jest/globals": "29.6.4",
+    "@types/glob": "8.1.0",
+    "@types/node": "18.17.15",
+    "@typescript-eslint/eslint-plugin": "6.6.0",
+    "@typescript-eslint/parser": "6.6.0",
+    "eslint": "8.49.0",
+    "eslint-import-resolver-typescript": "3.6.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jest": "27.2.3",
+    "eslint-plugin-prettier": "5.0.0",
+    "prettier": "3.0.3",
+    "rimraf": "5.0.1",
+    "typescript": "5.2.2"
+  },
+  "bugs": {
+    "url": "https://github.com/cuaklabs/ajstt/issues"
+  },
+  "homepage": "https://github.com/cuaklabs/ajstt#readme",
+  "license": "See license in \"LICENSE\" file",
+  "name": "@cuaklabs/json-schema-2-ajsttil",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuaklabs/ajstt.git"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.json",
+    "build:clean": "rimraf lib",
+    "format": "prettier --write ./src/**/*.ts",
+    "lint": "eslint --ext ts --ignore-path .gitignore ./src",
+    "prebuild": "pnpm run build:clean"
+  },
+  "version": "0.1.0"
+}
