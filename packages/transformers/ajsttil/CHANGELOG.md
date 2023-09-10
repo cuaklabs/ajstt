@@ -21,5 +21,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [UNRELEASED]
 
+### Added
+- Added `TypeMetadata`.
+- Added `AndTypeMetadata`
+- Added `AnyTypeMetadata`
+- Added `ArrayTypeMetadata`
+- Added `BooleanTypeMetadata`
+- Added `FloatTypeMetadata`
+- Added `IndexSignatureType`
+- Added `IntegerTypeMetadata`
+- Added `LiteralTypeMetadata`
+- Added `NoneTypeMetadata`
+- Added `ObjectTypeMetadata`
+- Added `OrTypeMetadata`
+- Added `PropertyTypeMetadata`
+- Added `StringTypeMetadata`
+- Added `XorTypeMetadata`
+
 
 
