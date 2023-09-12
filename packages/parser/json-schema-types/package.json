@@ -2,7 +2,7 @@
   "author": "Roberto Pintos López (https://github.com/notaphplover)",
   "description": "JSON Schema types package",
   "devDependencies": {
-    "@jest/globals": "29.6.4",
+    "@jest/globals": "29.7.0",
     "@types/glob": "8.1.0",
     "@types/node": "18.17.15",
     "@typescript-eslint/eslint-plugin": "6.7.0",
