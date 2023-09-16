@@ -6,13 +6,13 @@ export enum TypeMetadataKind {
   arrayType,
   booleanType,
   floatType,
-  indexSignatureType,
   integerType,
   literalType,
   noneType,
   objectType,
   or,
   propertyType,
+  stringIndexSignatureType,
   stringType,
   xor,
 }
@@ -41,8 +41,6 @@ export type ArrayTypeMetadata =
 export type BooleanTypeMetadata =
   BaseTypeMetadata<TypeMetadataKind.booleanType>;
 export type FloatTypeMetadata = BaseTypeMetadata<TypeMetadataKind.floatType>;
-export type IndexSignatureType =
-  OneChildTypeMetadata<TypeMetadataKind.indexSignatureType>;
 export type IntegerTypeMetadata =
   BaseTypeMetadata<TypeMetadataKind.integerType>;
 export interface LiteralTypeMetadata
@@ -57,6 +55,8 @@ export interface PropertyTypeMetadata
   isOptional: boolean;
   property: string;
 }
+export type StringIndexSignatureType =
+  OneChildTypeMetadata<TypeMetadataKind.stringIndexSignatureType>;
 export type StringTypeMetadata = BaseTypeMetadata<TypeMetadataKind.stringType>;
 export type XorTypeMetadata = ManyChildrenTypeMetadata<TypeMetadataKind.xor>;
 
@@ -66,12 +66,12 @@ export type TypeMedatata =
   | ArrayTypeMetadata
   | BooleanTypeMetadata
   | FloatTypeMetadata
-  | IndexSignatureType
   | IntegerTypeMetadata
   | LiteralTypeMetadata
   | NoneTypeMetadata
   | ObjectTypeMetadata
   | OrTypeMetadata
   | PropertyTypeMetadata
+  | StringIndexSignatureType
   | StringTypeMetadata
   | XorTypeMetadata;
