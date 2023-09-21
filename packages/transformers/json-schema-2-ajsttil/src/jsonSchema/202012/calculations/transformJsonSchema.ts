@@ -103,6 +103,10 @@ function handleJsonSchemaChildren(
           kind: TypeMetadataKind.floatType,
         },
         {
+          kind: TypeMetadataKind.literalType,
+          literal: null,
+        },
+        {
           kind: TypeMetadataKind.objectType,
         },
         {
@@ -198,7 +202,7 @@ function handleJsonSchemaSubschemas(
       children: schema.oneOf.map((schema: JsonSchema) =>
         transformJsonSchema(schema, context),
       ),
-      kind: TypeMetadataKind.xor,
+      kind: TypeMetadataKind.or,
     });
   }
 }

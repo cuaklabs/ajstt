@@ -388,7 +388,7 @@ describe(transformJsonSchema.name, () => {
             property: 'bar',
           },
         ],
-        kind: TypeMetadataKind.xor,
+        kind: TypeMetadataKind.or,
       },
     ],
     [
@@ -435,6 +435,10 @@ describe(transformJsonSchema.name, () => {
           },
           {
             kind: TypeMetadataKind.floatType,
+          },
+          {
+            kind: TypeMetadataKind.literalType,
+            literal: null,
           },
           {
             kind: TypeMetadataKind.objectType,
